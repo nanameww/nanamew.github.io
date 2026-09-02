@@ -1,3 +1,4 @@
+HTML
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -19,7 +20,7 @@ body {
 header {
     text-align: center;
     padding: 25px 15px;
-    background: linear-gradient(135deg,#1e90ff,#00bfff); /* 已改為藍色漸層 */
+    background: linear-gradient(135deg,#1e90ff,#00bfff); /* 標題藍色漸層 */
     font-size: 22px;
     font-weight: bold;
 }
@@ -30,7 +31,7 @@ header {
 }
 
 .section h2 {
-    border-left: 5px solid #ff4dc4;
+    border-left: 5px solid #ff4dc4; /* 保持粉色側邊條 */
     padding-left: 10px;
     margin-bottom: 20px;
 }
@@ -41,16 +42,19 @@ header {
     padding: 20px;
     border-radius: 12px;
     text-align: center;
+    margin-bottom: 20px; /* 增加兩個方格之間的距離 */
 }
 
+/* 將原本 coupon-box 的樣式拆分，文字顏色改為藍色 */
 .coupon-title {
     font-size: 18px;
     margin-bottom: 15px;
-    color: #ff4dc4;
+    color: #00bfff; /* 折扣標題改為藍色 */
 }
 
-button {
-    background: #8a2be2;
+/* 按鈕樣式修改：預設為藍色漸層 */
+.coupon-btn {
+    background: linear-gradient(135deg,#1e90ff,#00bfff); /* 按鈕藍色漸層 */
     color: white;
     border: none;
     padding: 12px 20px;
@@ -58,10 +62,13 @@ button {
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
+    width: 100%; /* 讓按鈕填滿方格寬度 */
+    box-sizing: border-box;
 }
 
-button:hover {
-    background: #ff4dc4;
+/* 滑鼠移到按鈕上的效果（改為深藍色） */
+.coupon-btn:hover {
+    background: #007acc; 
 }
 
 /* 社群 ICON */
@@ -74,12 +81,12 @@ button:hover {
 
 .social-icons a {
     font-size: 32px;
-    color: #ff4dc4;
+    color: #ff4dc4; /* 保持社群圖示粉色 */
     transition: 0.3s;
 }
 
 .social-icons a:hover {
-    color: #8a2be2;
+    color: #8a2be2; /* 滑鼠移到社群圖示變色 */
     transform: scale(1.2);
 }
 </style>
@@ -95,17 +102,18 @@ nana蝦皮優惠區
 <div class="section">
 <h2>限時折扣碼</h2>
 
+<!-- 第一個方格 -->
 <div class="coupon-box">
-
-    <div class="coupon-title">滿100折20</div>
-    <button onclick="claimCoupon()">點擊領取會自動複製折扣碼</button>
-
-    <br><br>
-
-    <div class="coupon-title">專屬折扣碼</div>
-    <button onclick="claimCoupon2()">點擊領取 </button>
-
+    <div class="coupon-title">全館滿100折20</div>
+    <button class="coupon-btn" onclick="claimCoupon()">點擊領取會自動複製折扣碼</button>
 </div>
+
+<!-- 第二個方格 -->
+<div class="coupon-box">
+    <div class="coupon-title">粉絲專屬碼</div>
+    <button class="coupon-btn" onclick="claimCoupon2()">點擊領取隱藏優惠</button>
+</div>
+
 </div>
 
 <!-- 社群連結 -->
@@ -113,13 +121,13 @@ nana蝦皮優惠區
 <h2>社群連結</h2>
 
 <div class="social-icons">
-<a href="">
+<a href="#">
     <i class="fa-brands fa-line"></i>
 </a>
-<a href="">
+<a href="#">
     <i class="fa-brands fa-instagram"></i>
 </a>
-<a href="">
+<a href="#">
     <i class="fa-brands fa-threads"></i>
 </a>
 </div>
@@ -128,17 +136,19 @@ nana蝦皮優惠區
 
 <script>
 function claimCoupon(){
+    // 這是範例折扣碼，請替換成你實際要發的碼
     navigator.clipboard.writeText("FEBSHV25");
+    // 這是範例連結，請替換成你的蝦皮商品連結或賣場連結
     window.location.href = "https://s.shopee.tw/807OEa1Na1";
 }
 
 function claimCoupon2(){
-    navigator.clipboard.writeText("0");
+    // 這是範例折扣碼，請替換成你實際要發的碼
+    navigator.clipboard.writeText("NANA99"); 
+    // 這是範例連結，請替換成你的蝦皮商品連結或賣場連結
     window.location.href = "https://s.shopee.tw/807OEa1Na1";
 }
 </script>
 
-</body>
-</html>
 </body>
 </html>
